@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Number:
+  = @trade_item.number
+p
+  strong Item:
+  = @trade_item.item_id
+
+= link_to 'Edit', edit_trade_item_path(@trade_item)
+'|
+= link_to 'Back', trade_items_path

@@ -1,0 +1,23 @@
+h1 Listing trade_items
+
+table
+  thead
+    tr
+      th Number
+      th Item
+      th
+      th
+      th
+
+  tbody
+    - @trade_items.each do |trade_item|
+      tr
+        td = trade_item.number
+        td = trade_item.item_id
+        td = link_to 'Show', trade_item
+        td = link_to 'Edit', edit_trade_item_path(trade_item)
+        td = link_to 'Destroy', trade_item, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Trade item', new_trade_item_path

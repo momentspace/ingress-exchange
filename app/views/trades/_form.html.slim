@@ -1,0 +1,29 @@
+= form_for @trade, html: { class: "form form-horizontal trade" } do |f|
+  .form-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'form-control'
+    = error_span(@trade[:name])
+  .form-group
+    = f.label :exchange_type, :class => 'control-label'
+    .controls
+      = f.text_field :exchange_type, :class => 'form-control'
+    = error_span(@trade[:exchange_type])
+  .form-group
+    = f.label :agent_id, :class => 'control-label'
+    .controls
+      = f.text_field :agent_id, :class => 'form-control'
+    = error_span(@trade[:agent_id])
+  .form-group
+    = f.label :place_id, :class => 'control-label'
+    .controls
+      = f.text_field :place_id, :class => 'form-control'
+    = error_span(@trade[:place_id])
+  .form-group
+    = f.label :comment, :class => 'control-label'
+    .controls
+      = f.text_field :comment, :class => 'form-control'
+    = error_span(@trade[:comment])
+  = f.submit nil, :class => 'btn btn-primary'
+  '
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), trades_path, :class => 'btn'

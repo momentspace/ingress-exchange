@@ -1,15 +1,11 @@
-= form_for @trade_item do |f|
-  - if @trade_item.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@trade_item.errors.count, "error")} prohibited this trade_item from being saved:"
-      ul
-        - @trade_item.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :number
-    = f.number_field :number
-  .field
-    = f.label :item_id
-    = f.number_field :item_id
-  .actions = f.submit
+= form_for @trade_item, :html => { :class => 'form-horizontal' } do |f|
+  .form-group
+    = f.label :number, :class => 'control-label'
+    = f.number_field :number, :class => 'form-control'
+  .form-group
+    = f.label :item_id, :class => 'control-label'
+    = f.number_field :item_id, :class => 'form-control'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    | &#xA0;
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), trade_items_path, :class => 'btn'

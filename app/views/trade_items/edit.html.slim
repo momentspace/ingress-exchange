@@ -1,8 +1,4 @@
-h1 Editing trade_item
-
-== render 'form'
-
-= link_to 'Show', @trade_item
-'|
-= link_to 'Back', trade_items_path
-
+- model_class = TradeItem
+.page-header
+  h1=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human, :default => "Edit #{model_class.model_name.human}")
+= render :partial => "form"

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :agents
+
   resources :trade_items
 
   resources :items

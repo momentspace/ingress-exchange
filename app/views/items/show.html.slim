@@ -9,7 +9,7 @@ p
 p
   strong= model_class.human_attribute_name(:image) + ':'
   br
-  = @item.image
+  = image_tag @item.image_url, :style => 'width: 90px; height: 90px;' if @item.image?
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), items_path, :class => 'btn'

@@ -5,13 +5,18 @@ Rails.application.routes.draw do
 
   resources :items
 
-  resources :trades
+  namespace :trades do
+    get 'index'
+    get 'new/:exchange_type' => '/trades#new'
+  end
+
+  #resources :trades
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'trades#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

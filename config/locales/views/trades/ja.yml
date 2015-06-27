@@ -1,0 +1,8 @@
+---
+ja:
+  trades:
+    index:
+      title: トレードアイテム
+      give_trades: アイテムほしいよリスト
+      take_trades: アイテムあげるよリスト
+    

@@ -1,10 +1,12 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: [:show, :edit, :update, :destroy]
 
+
   # GET /trades
   # GET /trades.json
   def index
-    @trades = Trade.all
+    @give_trades = Trade.gives
+    @take_trades = Trade.takes
   end
 
   # GET /trades/1
@@ -15,6 +17,13 @@ class TradesController < ApplicationController
   # GET /trades/new
   def new
     @trade = Trade.new
+    @trade.trade_items.build
+
+    if params[:exchange_type] == 'give'
+      @trade.exchange_type = 1
+    else
+      @trade.exchange_type = 2
+    end
   end
 
   # GET /trades/1/edit

@@ -12,3 +12,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( darkly.js )
 Rails.application.config.assets.precompile += %w( darkly.css )
 
+Rails.application.config.assets.digest = false

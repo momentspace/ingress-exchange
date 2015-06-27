@@ -1,4 +1,11 @@
-- model_class = Trade
-div class="page-header"
-  h1=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize
-= render :partial => "form"
+.container
+  .panel.panel-primary
+    .panel-heading
+      - if @trade.exchange_type == "1"
+        .h2.panel-title.text-primary t('trades.new.give.title')
+      - else
+        .h2.panel-title.text-primary t('trades.new.take.title')
+    .panel-body
+      .container
+        = render :partial => "form", :locals => {:exchange_type => @trade.exchange_type}
+

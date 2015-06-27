@@ -1,0 +1,8 @@
+- trade_items.each do |trade_item|
+  = fields_for trade_item, :html => { :class => 'form-horizontal' } do |f|
+    .form-group
+      = f.label :number, :class => 'control-label'
+      = f.number_field :number, :class => 'form-control'
+    .form-group
+      = f.label :item_id, :class => 'control-label'
+      = f.number_field :item_id, :class => 'form-control'
